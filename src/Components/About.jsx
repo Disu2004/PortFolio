@@ -35,7 +35,7 @@ export default function About() {
 
                     </div>
                     <a
-                        href="/Dishant_Resume.pdf"
+                        href="/Dishant_Upadhyay_Resume.pdf"
                         download
                         className="resume-btn"
                         data-aos="fade-right"
