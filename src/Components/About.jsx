@@ -10,8 +10,8 @@ export default function About() {
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            once: false,      
-            mirror: true,     
+            once: false,
+            mirror: true,
             offset: 220
         });
     }, []);
@@ -32,7 +32,17 @@ export default function About() {
                     <div className="status-badges" data-aos="zoom-in" data-aos-delay="700">
                         <span className="badge green">● Open to Work</span>
                         <span className="badge green">● Available</span>
+
                     </div>
+                    <a
+                        href="/Dishant_Resume.pdf"
+                        download
+                        className="resume-btn"
+                        data-aos="fade-right"
+                        data-aos-delay="800"
+                    >
+                        Download Resume
+                    </a>
                 </div>
 
                 <img
@@ -154,8 +164,8 @@ export default function About() {
                         <p>📞 +91 9327149074</p>
                         <div className="footer-socials">
                             <a href="https://github.com/Disu2004" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
-                            <a href="https://instagram.com/yourinsta" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/dishant-upadhyay-857425269" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/dish_ant2004/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
