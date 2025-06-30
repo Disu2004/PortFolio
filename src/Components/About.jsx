@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './CSS/about.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import emailjs from '@emailjs/browser';
+
 import profileImage from '../assets/profile.jpg';
 import project1 from '../assets/project1.jpeg';
 import project2 from '../assets/project2.jpeg';
@@ -16,9 +18,29 @@ export default function About() {
         });
     }, []);
 
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm('service_nicinac', 'template_liecrop', form.current, {
+                publicKey: 'xxa5TfoomBMBFVawf',
+            })
+            .then(
+                () => {
+                    alert('Message sent successfully!');
+                    form.current.reset();
+                },
+                (error) => {
+                    console.error('FAILED...', error.text);
+                    alert('Failed to send message. Try again.');
+                }
+            );
+    };
+
     return (
         <section id="about" className="about-section">
-
             {/* === Hero Section === */}
             <div className="about-container">
                 <div className="about-text" data-aos="fade-right" data-aos-delay="200">
@@ -32,7 +54,6 @@ export default function About() {
                     <div className="status-badges" data-aos="zoom-in" data-aos-delay="700">
                         <span className="badge green">● Open to Work</span>
                         <span className="badge green">● Available</span>
-
                     </div>
                     <a
                         href="/Dishant_Upadhyay_Resume.pdf"
@@ -131,9 +152,9 @@ export default function About() {
             {/* === Contact === */}
             <div className="contact-section">
                 <h2 className="title" data-aos="fade-up">Contact <span className="highlight">Me</span></h2>
-                <form className="contact-form" data-aos="fade-left" data-aos-delay="400">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required />
+                <form ref={form} onSubmit={sendEmail} className="contact-form" data-aos="fade-left" data-aos-delay="400">
+                    <input type="text" name="user_name" placeholder="Your Name" required />
+                    <input type="email" name="user_email" placeholder="Your Email" required />
                     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                     <button type="submit" className="submit-btn">Send</button>
                 </form>
