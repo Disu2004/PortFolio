@@ -140,7 +140,7 @@ export default function About() {
     <h3 className="project-title">GSRTC UI clone in Figma</h3>
     <p className="project-domain">Figma • UI/UX</p>
   </div>
-</a>
+
                 </div>
 
                 <div className="view-all-container" data-aos="zoom-in-up" data-aos-delay="700">
