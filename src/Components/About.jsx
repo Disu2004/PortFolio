@@ -135,11 +135,17 @@ export default function About() {
                         <h3 className="project-title">Movie Recommendation System</h3>
                         <p className="project-domain">React • Flask • ML</p>
                     </div>
-                    <div className="project-card" data-aos="flip-right" data-aos-delay="500">
-                        <img src={project2} alt="E-commerce UI" className="project-img" />
-                        <h3 className="project-title">E-Commerce UI in Figma</h3>
-                        <p className="project-domain">Figma • UI/UX</p>
-                    </div>
+                   <a 
+  href="https://www.behance.net/gallery/233599693/App-UI-and-Web-UI-Clones" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <div className="project-card" data-aos="flip-right" data-aos-delay="500">
+    <img src={project2} alt="E-commerce UI" className="project-img" />
+    <h3 className="project-title">GSRTC UI clone in Figma</h3>
+    <p className="project-domain">Figma • UI/UX</p>
+  </div>
+</a>
                 </div>
 
                 <div className="view-all-container" data-aos="zoom-in-up" data-aos-delay="700">
