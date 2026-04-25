@@ -199,7 +199,7 @@ export default function About() {
                             <span className="stat-num">8.93</span>
                             <span className="stat-label">CGPA · First Class Distinction</span>
                         </div>
-                       
+                      
                     </div>
                 </div>
                 <div className="hero-scroll-cue">
