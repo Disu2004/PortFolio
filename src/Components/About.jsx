@@ -4,9 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import emailjs from '@emailjs/browser';
 
-import profileImage from '../assets/profile.jpg';
-import project1 from '../assets/project1.jpeg';
-import project2 from '../assets/project2.jpeg';
+import profileImage from '../assets/image.png';
 
 export default function About() {
     const [toast, setToast] = useState({ show: false, success: true });
@@ -60,33 +58,86 @@ export default function About() {
             accent: '#00e676',
         },
         {
-            period: '2021 — 2025',
+            period: 'Jun 2024 — Jul 2024',
+            company: 'HackVeda',
+            role: 'Web Development Intern',
+            tag: 'Internship',
+            tagClass: 'tag-purple',
+            desc: '1-month intensive internship focused on frontend and full-stack web development. Built real-world projects using HTML, CSS, JavaScript, and React.js under mentorship.',
+            accent: '#b388ff',
+        },
+    ];
+
+    const education = [
+        {
+            period: '2022 — 2026',
             company: 'Marwadi University',
             role: 'B.Tech — Computer Engineering',
             tag: 'Education',
             tagClass: 'tag-blue',
-            desc: 'Completed Bachelor of Technology in Computer Engineering with a specialization in full-stack development, machine learning fundamentals, and software design.',
+            desc: 'Bachelor of Technology in Computer Engineering with a specialisation in full-stack development, machine learning fundamentals, and software design.',
             highlight: '🎓  CGPA 8.93 / 10.0  —  First Class Distinction',
             accent: '#448aff',
         },
+        {
+            period: '2019 — 2021',
+            company: 'Govt. Boys High School, Veraval',
+            role: 'HSC — Science Stream',
+            tag: 'HSC',
+            tagClass: 'tag-orange',
+            desc: 'Completed Higher Secondary Certificate in Science stream with Physics, Chemistry and Mathematics as core subjects.',
+            highlight: '📋  77%  —  Gujarat Secondary & Higher Secondary Education Board',
+            accent: '#ff9800',
+        },
+        {
+            period: 'Until 2019',
+            company: 'Maniben Kotak High School, Veraval',
+            role: 'SSC — Secondary School Certificate',
+            tag: 'SSC',
+            tagClass: 'tag-teal',
+            desc: 'Completed Secondary School Certificate from Maniben Kotak High School, Veraval with a strong academic foundation.',
+            highlight: '📋  75%  —  Gujarat Secondary Education Board',
+            accent: '#26c6da',
+        },
     ];
 
+    // Projects with online images matching dark background theme (dark/tech aesthetic from Unsplash)
     const projects = [
         {
-            img: project1,
+            img: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80',
+            alt: 'PlaceSmart',
+            title: 'PlaceSmart — Placement Preparation App',
+            desc: 'Comprehensive placement preparation platform with curated DSA problems, aptitude tests, mock interviews, and company-specific preparation roadmaps.',
+            tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+            num: '01',
+            link: 'https://github.com/Disu2004',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80',
             alt: 'Movie Recommendation',
             title: 'Movie Recommendation System',
             desc: 'ML-powered engine using collaborative filtering with an interactive React frontend for personalised movie discovery.',
             tags: ['React', 'Flask', 'Machine Learning'],
-            num: '01',
+            num: '02',
+            link: 'https://github.com/Disu2004',
         },
         {
-            img: project2,
+            img: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80',
+            alt: 'MyStocks',
+            title: 'MyStocks — Stock Market App',
+            desc: 'Sample stock market application featuring full CRUD operations, live price simulation, portfolio tracking, and watchlist management.',
+            tags: ['React', 'Node.js', 'MongoDB', 'REST API'],
+            num: '03',
+            link: 'https://github.com/Disu2004',
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
             alt: 'GSRTC UI',
             title: 'GSRTC UI Clone — Figma',
             desc: 'Full UI/UX redesign of the Gujarat GSRTC bus booking portal, modernising the entire user journey and visual system.',
             tags: ['Figma', 'UI/UX', 'Prototyping'],
-            num: '02',
+            num: '04',
+            link: 'https://github.com/Disu2004',
         },
     ];
 
@@ -108,7 +159,7 @@ export default function About() {
             <nav className="port-nav">
                 <span className="port-logo">DU<span className="logo-dot">.</span></span>
                 <ul className="port-navlinks">
-                    {['Experience', 'Stack', 'Projects', 'Contact'].map(n => (
+                    {['Experience', 'Education', 'Stack', 'Projects', 'Contact'].map(n => (
                         <li key={n}><a href={`#${n.toLowerCase()}`}>{n}</a></li>
                     ))}
                 </ul>
@@ -148,10 +199,7 @@ export default function About() {
                             <span className="stat-num">8.93</span>
                             <span className="stat-label">CGPA · First Class Distinction</span>
                         </div>
-                        <div className="hero-exp-card" data-aos="zoom-in" data-aos-delay="600">
-                            <span className="exp-num">1+</span>
-                            <span className="exp-label">Year Professional XP</span>
-                        </div>
+                       
                     </div>
                 </div>
                 <div className="hero-scroll-cue">
@@ -164,7 +212,7 @@ export default function About() {
             <section className="port-section" id="experience">
                 <div className="section-header" data-aos="fade-up">
                     <span className="section-eyebrow">01 / Journey</span>
-                    <h2 className="section-title">Experience &amp; Education</h2>
+                    <h2 className="section-title">Work Experience</h2>
                 </div>
                 <div className="timeline">
                     <div className="tl-spine" />
@@ -192,10 +240,42 @@ export default function About() {
                 </div>
             </section>
 
-            {/* ── Stack ── */}
-            <section className="port-section port-alt" id="stack">
+            {/* ── Education ── */}
+            <section className="port-section port-alt" id="education">
                 <div className="section-header" data-aos="fade-up">
-                    <span className="section-eyebrow">02 / Toolkit</span>
+                    <span className="section-eyebrow">02 / Education</span>
+                    <h2 className="section-title">Academic Background</h2>
+                </div>
+                <div className="timeline">
+                    <div className="tl-spine" />
+                    {education.map((e, i) => (
+                        <div className="tl-row" key={i} data-aos="fade-up" data-aos-delay={i * 120}>
+                            <div className="tl-meta">
+                                <span className="tl-period">{e.period}</span>
+                                <div className="tl-dot" style={{ background: e.accent, boxShadow: `0 0 12px ${e.accent}60` }} />
+                            </div>
+                            <div className="tl-card">
+                                <div className="tl-card-top">
+                                    <div>
+                                        <h3 className="tl-company">{e.company}</h3>
+                                        <p className="tl-role">{e.role}</p>
+                                    </div>
+                                    <span className={`tl-tag ${e.tagClass}`}>{e.tag}</span>
+                                </div>
+                                <p className="tl-desc">{e.desc}</p>
+                                {e.highlight && (
+                                    <div className="tl-highlight">{e.highlight}</div>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* ── Stack ── */}
+            <section className="port-section" id="stack">
+                <div className="section-header" data-aos="fade-up">
+                    <span className="section-eyebrow">03 / Toolkit</span>
                     <h2 className="section-title">Tech Stack</h2>
                 </div>
                 <div className="stack-grid">
@@ -213,9 +293,9 @@ export default function About() {
             </section>
 
             {/* ── About ── */}
-            <section className="port-section" id="about-blk">
+            <section className="port-section port-alt" id="about-blk">
                 <div className="section-header" data-aos="fade-up">
-                    <span className="section-eyebrow">03 / About</span>
+                    <span className="section-eyebrow">04 / About</span>
                     <h2 className="section-title">Who I Am</h2>
                 </div>
                 <div className="about-grid">
@@ -242,14 +322,14 @@ export default function About() {
             </section>
 
             {/* ── Projects ── */}
-            <section className="port-section port-alt" id="projects">
+            <section className="port-section" id="projects">
                 <div className="section-header" data-aos="fade-up">
-                    <span className="section-eyebrow">04 / Work</span>
+                    <span className="section-eyebrow">05 / Work</span>
                     <h2 className="section-title">Featured Projects</h2>
                 </div>
                 <div className="proj-grid">
                     {projects.map((p, i) => (
-                        <div className="proj-card" key={i} data-aos="fade-up" data-aos-delay={i * 120}>
+                        <div className="proj-card" key={i} data-aos="fade-up" data-aos-delay={i * 100}>
                             <div className="proj-img-wrap">
                                 <img src={p.img} alt={p.alt} className="proj-img" />
                                 <div className="proj-overlay">
@@ -277,9 +357,9 @@ export default function About() {
             </section>
 
             {/* ── Contact ── */}
-            <section className="port-section" id="contact">
+            <section className="port-section port-alt" id="contact">
                 <div className="section-header" data-aos="fade-up">
-                    <span className="section-eyebrow">05 / Let's Talk</span>
+                    <span className="section-eyebrow">06 / Let's Talk</span>
                     <h2 className="section-title">Get In Touch</h2>
                 </div>
                 <div className="contact-grid">
@@ -341,6 +421,7 @@ export default function About() {
                         <p className="footer-col-head">Navigation</p>
                         <a href="/">Home</a>
                         <a href="#experience">Experience</a>
+                        <a href="#education">Education</a>
                         <a href="#projects">Projects</a>
                         <a href="#contact">Contact</a>
                     </div>
