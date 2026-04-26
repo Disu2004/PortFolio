@@ -54,7 +54,7 @@ export default function About() {
             role: 'Jr. Software Developer',
             tag: 'Current',
             tagClass: 'tag-green',
-            desc: 'Building and maintaining full-stack web solutions for clients. Working with React.js, Node.js and Express to deliver production-grade digital products and web applications.',
+            desc: 'Building and maintaining full-stack web solutions for clients. Working with python and frappe framework to deliver production-grade digital products and web applications.',
             accent: '#00e676',
         },
         {
